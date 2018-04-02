@@ -1,4 +1,4 @@
-filename = 'Top73CourseList.xlsx' ; 
+filename = 'Top73CourseList.xlsx' ;
 Top73 = xlsread(filename);
 [~,Top73Courses] = xlsread(filename, 'A:A');
 
@@ -20,4 +20,21 @@ end %ii iteration
 
 StudentsTakenTop73 = rmmissing(StudentsTakenTop73); %deletes <missing> rows
 
+% need vector for each student listng the courses they took
+% n choose k to list them as pairs
 
+%StudentID = Zeros(1,2);
+UniqueStudentID = unique(StudentsTakenTop73(:,1));
+
+UniqueStudentClasses = Zeros(length(UniqueStudentID), 6)
+
+for ii = 1:length(UniqueStudentID)
+    for jj = 1:length(StudentsTakenTop73)
+        while UniqueStudentClasses(ii) == StudentsTakenTop73(jj,1)
+            UniqueStudentClasses =
+
+
+    UniqueStudnetClasses(ii,:) =
+
+
+end
