@@ -19,22 +19,26 @@ for ii = 1:size(StudentCourses,1)
 end %ii iteration
 
 StudentsTakenTop73 = rmmissing(StudentsTakenTop73); %deletes <missing> rows
+UniqueStudentID = unique(StudentsTakenTop73(:,1));
+
+for jj = 1:length(UniqueStudentID)
+    a = {};
+for ii = 1:size(StudentsTakenTop73,1)
+        if strcmp(StudentsTakenTop73(ii,1),UniqueStudentID(jj,1)) == 1
+                a{end+1} = StudentsTakenTop73(ii,2);
+        end
+end
+    % do something with a -- put it somewhere
+    b{jj,1} = UniqueStudentID(jj);
+    b{jj,2} = a;
+end
+
+
+   %%% Grabs each class a single student takes.  Will list them as pairs
+   %%% using nchoosek and then put them into an expanding vector that lists
+   %%% all of the combined courses for every student
+%end
+
 
 % need vector for each student listng the courses they took
 % n choose k to list them as pairs
-
-%StudentID = Zeros(1,2);
-UniqueStudentID = unique(StudentsTakenTop73(:,1));
-
-UniqueStudentClasses = Zeros(length(UniqueStudentID), 6)
-
-for ii = 1:length(UniqueStudentID)
-    for jj = 1:length(StudentsTakenTop73)
-        while UniqueStudentClasses(ii) == StudentsTakenTop73(jj,1)
-            UniqueStudentClasses =
-
-
-    UniqueStudnetClasses(ii,:) =
-
-
-end
